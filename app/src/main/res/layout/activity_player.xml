@@ -262,6 +262,7 @@
             android:orientation="horizontal">
 
             <ImageButton
+                android:onClick="BackActivity"
                 android:id="@+id/backActivity"
                 android:layout_gravity="start|center_vertical"
                 android:background="#00FFFFFF"

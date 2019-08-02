@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         creatSong();
         songObject = dbSong.getSong_By_Id(ID);
         soundPlay = MediaPlayer.create(this, songObject.getSongSound());
+     
 
         startActivity(new Intent(MainActivity.this, HomeActivity.class));
         finish();

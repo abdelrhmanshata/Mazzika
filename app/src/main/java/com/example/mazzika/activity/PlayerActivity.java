@@ -15,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatSeekBar;
@@ -28,7 +29,11 @@ import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.util.Random;
 
+import es.dmoral.toasty.Toasty;
+
 public class PlayerActivity extends AppCompatActivity {
+
+    private long backPressedTime;
 
     public static int Category = 0;
     public static int Sound = 0;
@@ -472,6 +477,18 @@ public class PlayerActivity extends AppCompatActivity {
         editor.putBoolean("REPLAY", REPLAY);
         editor.putBoolean("SHUFFLE", SHUFFLE);
         editor.apply();
+    }
+
+    public void BackActivity(View view){
+        onBackPressed();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+            super.onBackPressed();
+            return;
     }
 
 }
